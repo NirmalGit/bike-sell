@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Authenticate } from '@bike-sell/data-models';
+
 
 @Component({
   selector: 'bike-sell-login-form',
@@ -6,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-form.component.css'],
 })
 export class LoginFormComponent implements OnInit {
-  constructor() {}
 
-  ngOnInit(): void {}
+  @Output() submit = new EventEmitter<Authenticate>();
+
+
+
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  constructor() { }
+
+  ngOnInit(): void { }
+
+  login(authenticate: Authenticate): void {
+    this.submit.emit(authenticate);
+  }
 }
