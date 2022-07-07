@@ -7,6 +7,7 @@
     "bike-seller-e2e": "apps/bike-seller-e2e",
     "customer-portal": "apps/customer-portal",
     "customer-portal-e2e": "apps/customer-portal-e2e",
-    "data-models": "libs/data-models"
+    "data-models": "libs/data-models",
+    "material": "libs/material"
   }
 }
