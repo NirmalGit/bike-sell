@@ -3,6 +3,8 @@
   "version": 2,
   "projects": {
     "bike-seller": "apps/bike-seller",
-    "bike-seller-e2e": "apps/bike-seller-e2e"
+    "bike-seller-e2e": "apps/bike-seller-e2e",
+    "customer-portal": "apps/customer-portal",
+    "customer-portal-e2e": "apps/customer-portal-e2e"
   }
 }
