@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "auth": "libs/auth",
     "bike-seller": "apps/bike-seller",
     "bike-seller-e2e": "apps/bike-seller-e2e",
     "customer-portal": "apps/customer-portal",
