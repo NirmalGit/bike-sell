@@ -17,6 +17,7 @@
     "paths": {
       "@bike-sell/auth": ["libs/auth/src/index.ts"],
       "@bike-sell/data-models": ["libs/data-models/src/index.ts"],
+      "@bike-sell/layout": ["libs/layout/src/index.ts"],
       "@bike-sell/material": ["libs/material/src/index.ts"]
     }
   },

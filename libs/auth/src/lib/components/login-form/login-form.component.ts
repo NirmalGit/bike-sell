@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Authenticate } from '@bike-sell/data-models';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -9,16 +10,31 @@ import { Authenticate } from '@bike-sell/data-models';
 })
 export class LoginFormComponent implements OnInit {
 
-  @Output() submit = new EventEmitter<Authenticate>();
 
+  @Output() submitted = new EventEmitter<Authenticate>();
 
-
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  constructor() { }
-
-  ngOnInit(): void { }
-
-  login(authenticate: Authenticate): void {
-    this.submit.emit(authenticate);
+  loginForm = new FormGroup(
+    {
+      username: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required])
+    }
+  )
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
+  get username() {
+    return this.loginForm.get('username');
+  }
+
+  get password() {
+    return this.loginForm.get('password');
+  }
+  login(): void {
+    this.submitted.emit({
+      username: this.loginForm.value.username,
+      password: this.loginForm.value.password
+    } as Authenticate);
+  }
+
+
 }
