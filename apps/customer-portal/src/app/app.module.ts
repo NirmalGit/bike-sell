@@ -15,6 +15,7 @@ import { LayoutModule } from '@bike-sell/layout';
     BrowserAnimationsModule,
     RouterModule.forRoot(
       [
+        { path: '', pathMatch: 'full', redirectTo: 'products' },
         { path: 'auth', children: authRoutes },
         {
           path: 'products',
@@ -32,4 +33,4 @@ import { LayoutModule } from '@bike-sell/layout';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
