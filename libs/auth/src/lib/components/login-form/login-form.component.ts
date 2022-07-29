@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Authenticate } from '@bike-sell/data-models';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -8,7 +8,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.css'],
 })
-export class LoginFormComponent implements OnInit {
+export class LoginFormComponent {
 
 
   @Output() submitted = new EventEmitter<Authenticate>();
@@ -19,9 +19,7 @@ export class LoginFormComponent implements OnInit {
       password: new FormControl('', [Validators.required])
     }
   )
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+
   get username() {
     return this.loginForm.get('username');
   }
