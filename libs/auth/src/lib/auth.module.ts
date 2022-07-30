@@ -8,24 +8,36 @@ import { MaterialModule } from '@bike-sell/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './guards/auth/auth.guard';
 import { AuthInterceptor } from './interceptors/auth/auth.interceptor';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import * as fromAuth from './+state/auth.reducer';
+import { AuthEffects } from './+state/auth.effects';
 //import { AuthInterceptor } from '@bike-sell/auth/src/interceptors/auth/auth.interceptor';
 
 export const authRoutes: Route[] = [
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
 ];
 
 const COMPONENTS = [LoginComponent, LoginFormComponent];
 
 @NgModule({
-  imports: [CommonModule, RouterModule, HttpClientModule, MaterialModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    HttpClientModule,
+    MaterialModule,
+    ReactiveFormsModule,
+    StoreModule.forFeature(fromAuth.AUTH_FEATURE_KEY, fromAuth.authReducer),
+    EffectsModule.forFeature([AuthEffects]),
+  ],
   declarations: [COMPONENTS],
   exports: [COMPONENTS],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
-export class AuthModule { }
+export class AuthModule {}

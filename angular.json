@@ -10,6 +10,7 @@
     "data-models": "libs/data-models",
     "layout": "libs/layout",
     "material": "libs/material",
+    "posts": "libs/posts",
     "products": "libs/products"
   }
 }

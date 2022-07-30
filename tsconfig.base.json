@@ -19,6 +19,7 @@
       "@bike-sell/data-models": ["libs/data-models/src/index.ts"],
       "@bike-sell/layout": ["libs/layout/src/index.ts"],
       "@bike-sell/material": ["libs/material/src/index.ts"],
+      "@bike-sell/posts": ["libs/posts/src/index.ts"],
       "@bike-sell/products": ["libs/products/src/index.ts"]
     }
   },

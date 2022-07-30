@@ -30,6 +30,11 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
             ),
           canActivate: [AuthGuard],
         },
+        {
+          path: 'posts',
+          loadChildren: () =>
+            import('@bike-sell/posts').then((module) => module.PostsModule),
+        },
       ],
       { initialNavigation: 'enabledBlocking' }
     ),
